@@ -1,0 +1,21 @@
+Constructor
+	for categroy, check for next byte. if true then store
+	for name, store next string
+	for description, store next string to temp and end if temp is equal to "P"
+	
+	set duration
+	set due
+
+duration setter
+	for duration, store byte to temp, check for time type, and store temp to array with correct index for type
+due setter
+	for due, store first three bytes to LocalDate. Store last two bytes for LocalTime
+
+duration day setter
+	duration.day = (get due.hour + (24 * &due.day - now.day)) and subtract now.hour)/24
+duration hour setter
+	duration.hour = get due.hour + (24 * (due.day - now.day)) and subtract now.hour
+minute_setter
+	duration.min = get due.min + (60 * (due.hour - now.hour)) and subtract now.min
+				
+	
